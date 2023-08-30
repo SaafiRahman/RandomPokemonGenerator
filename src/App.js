@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
-import NewPokemon from "./NewPokemon.js"
+
 
 function App() {
 
