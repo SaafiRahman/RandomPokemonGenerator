@@ -15,7 +15,7 @@ const handleClick = () => {
     setPokid(randomNumberInRange(1, 1010));
 };
 
-  const [pokemon, setPokemon] = useState([]);
+  const [pokemon, setPokemon] = useState(null);
   const [pokid, setPokid] = useState(1);
 
   useEffect(() => {
@@ -33,8 +33,10 @@ const handleClick = () => {
     
     <div className="app">
       <h1>Generate a random Pokemon</h1>
-      <img src={pokemon.sprites.front_default} />
-      <p>{pokemon.name} , {pokid}</p>
+      {pokemon && <img src={pokemon.sprites.front_default} width={200}  height={200}/>}
+      
+      
+      {pokemon &&  <p>{pokemon.name}, {pokid}</p>}
       <div className="button">
       <Button variant="primary" onClick={handleClick}>Generate!</Button>
       </div>
