@@ -33,9 +33,10 @@ const handleClick = () => {
     
     <div className="app">
       <h1>Generate a random Pokemon</h1>
+      <img src={pokemon.sprites.front_default} />
+      <p>{pokemon.name} , {pokid}</p>
       <div className="button">
       <Button variant="primary" onClick={handleClick}>Generate!</Button>
-      <p>{pokemon.name} , {pokid}</p>
       </div>
     </div>
   );
