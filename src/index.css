@@ -1,8 +1,10 @@
-.app {
-  align-items: center;
-  justify-content: center;
+.app {  
   margin: auto;  
   text-align: center;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   padding: 50px;
+}
+
+.typespace {
+  align-content: center;
 }
