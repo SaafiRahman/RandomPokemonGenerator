@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
+import PokeData from './PokeData';
 
 
 function App() {
@@ -12,12 +13,14 @@ function App() {
 };
 
 const handleClick = () => {
+    setLoaded(false);
     setPokid(randomNumberInRange(1, 1010));
     
 };
 
   const [pokemon, setPokemon] = useState(null);
   const [pokid, setPokid] = useState(1);
+  const [loaded, setLoaded] = useState(false);
 
  
 
@@ -28,7 +31,7 @@ const handleClick = () => {
   })
     .then((data) => {
       setPokemon(data);
-
+      setLoaded(true);
   })
   }, [pokid]);
   
@@ -38,19 +41,21 @@ const handleClick = () => {
     
     <div className="app">
       <h1>Generate a random Pokemon</h1>
-      {pokemon && <img src={pokemon.sprites.front_default} width={200}  height={200}/>}
-
-      <div classsName="typespace">
-        {pokemon.types.map((type, key) => (
-          <div key={key}>
-            <span>{type.type.name}</span>
-          </div>
-        ))}
-      </div>
-
-      {pokemon &&  <p>{pokemon.name}, {pokid}</p>}
-      <div className="button">
-      <Button variant="primary" onClick={handleClick}>Generate!</Button>
+      {
+        !loaded ? <img src={"./logo192.png"} />
+        :<PokeData
+          sprite={pokemon.sprites.front_default} 
+          name={pokemon.name}
+          type={pokemon.types}
+          ability={pokemon.abilities}
+          stats={pokemon.stats} 
+          id={pokid}
+        />
+      } 
+      <div>  
+      <Button variant="primary" disabled={!loaded} onClick={handleClick}>
+        {!loaded ? 'loading...' : 'Generate!'}
+        </Button>
       </div>
     </div>
   );
