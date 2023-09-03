@@ -10,3 +10,8 @@
   background-size: cover;
 }
 
+.button {
+  position: fixed;
+  margin-top: 800px;
+}
+
