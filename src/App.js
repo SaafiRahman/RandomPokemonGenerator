@@ -4,6 +4,10 @@ import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
 import PokeData from './PokeData';
 import Form from 'react-bootstrap/Form';
+import Navibar from './Navibar';
+import './Fonts/PokemonSolid.ttf';
+
+
 
 
 function App() {
@@ -22,7 +26,6 @@ const handleClick = () => {
   const [pokemon, setPokemon] = useState(null);
   const [pokid, setPokid] = useState(1);
   const [loaded, setLoaded] = useState(false);
-  const [numpokemon, setNumpokemon] = useState(0);
 
  
 
@@ -42,7 +45,10 @@ const handleClick = () => {
   return (
     
     <div className="app">
-      <h1>Generate a random Pokemon</h1>
+      <Navibar />
+      <h1 className='pokefonts'>Generate a random Pokemon</h1>
+
+      <div>
       {
         !loaded ? <img src={"./logo192.png"} />
         :<PokeData
@@ -54,19 +60,10 @@ const handleClick = () => {
           id={pokid}
         />
       } 
+      </div>
 
       <br />
       <div>  
-      <Form.Select aria-label="Default select example" Width="50px">
-      <option>How many pokemon would you like to generate?</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-    </Form.Select>
-    
       <Button variant="primary" disabled={!loaded} onClick={handleClick}>
         {!loaded ? 'loading...' : 'Generate!'}
         </Button>

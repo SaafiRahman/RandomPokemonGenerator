@@ -4,7 +4,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 export default function PokeData(props) {
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem' }} className='mx-auto'>
       <Card.Img variant="bottom" src={props.sprite} />
       <Card.Body>
         <Card.Title>{props.name}</Card.Title>
