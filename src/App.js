@@ -7,9 +7,6 @@ import Form from 'react-bootstrap/Form';
 import Navibar from './Navibar';
 import './Fonts/PokemonSolid.ttf';
 
-
-
-
 function App() {
 
   const randomNumberInRange = (min, max) => {
@@ -28,7 +25,6 @@ const handleClick = () => {
   const [loaded, setLoaded] = useState(false);
 
  
-
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon/" + pokid + "/")
     .then(res => {
@@ -40,14 +36,14 @@ const handleClick = () => {
   })
   }, [pokid]);
   
- 
 
   return (
     
     <div className="app">
       <Navibar />
-      <h1 className='pokefonts'>Generate a random Pokemon</h1>
-
+      <div className='title'>
+      <h1 className='pokefontsHollow'>Generate a random Pokemon</h1>
+      </div>
       <div>
       {
         !loaded ? <img src={"./logo192.png"} />

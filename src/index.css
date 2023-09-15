@@ -21,7 +21,26 @@
    url("./Fonts/PokemonHollow.ttf") format("truetype");
  }
 
- .pokefonts {
+ @font-face {
+  font-family: "PokemonSolid";
+  src: local("PokemonSolid"),
+   url("./Fonts/PokemonSolid.ttf") format("truetype");
+ }
+
+ .pokefontsHollow {
   font-family: "PokemonHollow";
   font-size: 400;
+ }
+
+ .pokefontsSolid {
+  font-family: "PokemonSolid";
+  font-size: 200000;
+ }
+
+ .info {
+  display: flex;
+ }
+
+ .title {
+  padding-top: 50px;
  }
