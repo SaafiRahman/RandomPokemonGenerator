@@ -39,8 +39,23 @@
 
  .info {
   display: flex;
+  justify-content: left;
  }
 
  .title {
   padding-top: 50px;
+ }
+
+ .loginbox {
+    background-image: url("pokegrass.jpg");
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+ }
+
+ form {
+  background-color:beige;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
  }

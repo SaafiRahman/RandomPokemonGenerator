@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button';
 import { useEffect, useState } from 'react';
 import PokeData from './PokeData';
 import Form from 'react-bootstrap/Form';
-import Navibar from './Navibar';
 import './Fonts/PokemonSolid.ttf';
 
 function App() {
@@ -40,7 +39,6 @@ const handleClick = () => {
   return (
     
     <div className="app">
-      <Navibar />
       <div className='title'>
       <h1 className='pokefontsHollow'>Generate a random Pokemon</h1>
       </div>
